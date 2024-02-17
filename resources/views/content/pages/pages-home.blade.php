@@ -1,5 +1,5 @@
 @php
-$configData = Helper::appClasses();
+    $configData = Helper::appClasses();
 @endphp
 
 @extends('layouts/layoutMaster')
@@ -7,6 +7,14 @@ $configData = Helper::appClasses();
 @section('title', 'Home')
 
 @section('content')
-<h4>Home Page</h4>
-<h4>Cambios desde local</h4>
+  <h4>Home Page</h4>
+    <p>Este contenido es público<p>
+      @role('ceo')
+    <p>Este contenido es para el Administrador<p>
+      @endrole
+
+      @role('usuario')
+    <p>Este contenido es para el Usuario Empleado<p>
+      @endrole
+
 @endsection

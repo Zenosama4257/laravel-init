@@ -76,14 +76,15 @@ $customizerHidden = 'customizer-hide';
               <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
             </div>
           </form>
-
+{{--
+          @role('admin')
           <p class="text-center">
             <span>New on our platform?</span>
             <a href="{{url('auth/register-basic')}}">
               <span>Create an account</span>
             </a>
           </p>
-
+          @endrole --}}
           <div class="divider my-4">
             <div class="divider-text">or</div>
           </div>
