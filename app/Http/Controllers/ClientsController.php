@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Client;
+use App\Http\Requests\StoreClientRequest;
+use App\Http\Requests\UpdateClientRequest;
 
 class ClientsController extends Controller
 {
@@ -15,81 +15,76 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        $Clients = Client::all();
-        return $Clients;
+        $clients=Client::all();
+        return view('admin.clients.index',compact('clients'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('admin.clients.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreClientRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreClientRequest $request)
     {
-        $request->validate([
-          'contact_name'=>['required'],
-          'nif'=>['required','unique:clients,nif'],
-          'simel',
-          'license',
-          'rate',
-          'social_reason',
-          'all_cups',
-          'url',
-        ]);
-        $Client = new Client();
-        $Client->name = $request->name;
-        $Client->last_name = $request->last_name;
-        $Client->job = $request->job;
-        $Client->phone = $request->phone;
-        $Client->address = $request->address;
-        $Client->age = $request->age;
-
-        $Client->save();
+        Client::create($request->validated());
+        return redirect()->route('admin.clients.index')->with('success', 'Cliente creado exitosamente');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Client $client)
     {
-        $Client = Client::find($id);
-        return $Client;
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Client  $client
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Client $client)
+    {
+        return view('admin.clients.edit', compact('client'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\UpdateClientRequest  $request
+     * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateClientRequest $request, Client $client)
     {
-        $Client = Client::findOrFail($request->id);
-        $Client->name = $request->name;
-        $Client->last_name = $request->last_name;
-        $Client->job = $request->job;
-        $Client->phone = $request->phone;
-        $Client->address = $request->address;
-        $Client->age = $request->age;
-
-        $Client->save();
-        return $Client;
+        $client->update($request->validated());
+        return redirect()->route('admin.clients.index')->with('success', 'Cliente editado exitosamente');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Client $client)
     {
-        $Client = Client::destroy($id);
-        return $Client;
+        $client->delete();
+        return back();
     }
 }

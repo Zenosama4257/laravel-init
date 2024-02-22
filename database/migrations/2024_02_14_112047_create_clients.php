@@ -15,17 +15,15 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            //dfsfsajdjjjesusus
-            $table->string('nif');
-            $table->string('simel');
+            $table->string('nif')->unique();
+            $table->string('simel')->unique();
             $table->string('contact_name');
             $table->string('social_reason');
             $table->string('license');
             $table->float('rate');
-            $table->string('all_cups');
             $table->string('url');
-
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

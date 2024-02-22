@@ -3,9 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
-use App\Models\User;
+
 return new class extends Migration
 {
     /**
@@ -15,10 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-      // $role1 = Role::create(['name' => 'admin']);
-      // $role2 = Role::create(['name' => 'escritor']);
-      // $user = User::find(1);
-      // $user->assignRole($role1);
+        Schema::create('unitprices', function (Blueprint $table) {
+            $table->id();
+            $table->string('type');
+            $table->string('month');
+            $table->float('price')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
+        });
     }
 
     /**
@@ -28,5 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('unitprices');
     }
 };

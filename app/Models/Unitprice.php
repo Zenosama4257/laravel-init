@@ -6,18 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Client extends Model
+class Unitprice extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
     protected $fillable = [
-      'nif',
-      'simel',
-      'contact_name',
-      'social_reason',
-      'license',
-      'rate',
-      'url',
+        'type_unit',
+        'month',
+        'price',
     ];
 }
