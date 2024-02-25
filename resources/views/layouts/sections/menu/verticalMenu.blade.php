@@ -76,6 +76,7 @@ $configData = Helper::appClasses();
         <div>{{ isset($menu->name) ? __($menu->name) : '' }}</div>
       </a>
 
+  
       {{-- submenu --}}
       @isset($menu->submenu)
       @include('layouts.sections.menu.submenu',['menu' => $menu->submenu])

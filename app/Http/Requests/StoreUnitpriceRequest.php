@@ -46,7 +46,7 @@ class StoreUnitpriceRequest extends FormRequest
                     Month::OCTUBRE,
                     Month::NOVIEMBRE,
                     Month::DICIEMBRE,
-                    ])
+                ])
             ],
             'price'=>[
                 'required'

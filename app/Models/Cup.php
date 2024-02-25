@@ -4,14 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Cup extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = [
         'location',
-        'id_client',
+        'client_id',
     ];
 
     public function client(){

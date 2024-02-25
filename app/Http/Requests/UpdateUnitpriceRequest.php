@@ -3,6 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use Month;
+use Type_unit;
 
 class UpdateUnitpriceRequest extends FormRequest
 {
@@ -25,10 +28,23 @@ class UpdateUnitpriceRequest extends FormRequest
     {
         return [
             'type_unit'=>[
-                'required'
+                'required', Rule::in([Type_unit::KWH,Type_unit::M3,Type_unit::DIAS])
             ],
             'month'=>[
-                'required'
+                'required', Rule::in([
+                    Month::ENERO,
+                    Month::FEBRERO,
+                    Month::MARZO,
+                    Month::ABRIL,
+                    Month::MAYO,
+                    Month::JUNIO,
+                    Month::JULIO,
+                    Month::AGOSTO,
+                    Month::SEPTIEMBRE,
+                    Month::OCTUBRE,
+                    Month::NOVIEMBRE,
+                    Month::DICIEMBRE,
+                ])
             ],
             'price'=>[
                 'required'
