@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('unitprices', function (Blueprint $table) {
+        Schema::create('cups', function (Blueprint $table) {
             $table->id();
-            $table->string('type_unit')->default('dias');
-            $table->string('month')->default("febrero");
-            $table->float('price')->nullable();
+            $table->string('location');
+            $table->foreignId('client_id')->nullable()->constrained();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('unitprices');
+        Schema::dropIfExists('cups');
     }
 };

@@ -19,7 +19,7 @@ class ClientsSeeder extends Seeder
         $clients=[
             [
                 'nif'=>'21992498J',
-                'simel'=>'',
+                'simel'=>'ES625484IT',
                 'contact_name'=>'Jose Antonio Ramos',
                 'social_reason'=>'Alquilar',
                 'license'=>'',

@@ -30,16 +30,13 @@ class UsersSeeder extends Seeder
                 'email_verified_at'=>now()
             ],
         ];
-        User::factory(30)->create();
         $role1 = Role::create(['name' => 'admin']);
         $role2 = Role::create(['name' => 'escritor']);
         
         foreach($users as $user){
             User::create($user);
+            $user = User::find(1);
+            $user->assignRole($role1);
         }
-        $user = User::find(1);
-        $user->assignRole($role1);
-        
-        
     }
 }

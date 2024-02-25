@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             UsersSeeder::class,
             ClientsSeeder::class,
             UnitpricesSeeder::class,
+            CupsSeeder::class,
         ]);
         
     }
