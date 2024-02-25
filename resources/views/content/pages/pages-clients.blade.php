@@ -4,7 +4,7 @@
 
 @extends('layouts/layoutMaster')
 
-@section('title', 'Inicio')
+@section('title', 'Clientes')
 
 @section('content')
   <h4> Pagina Inicio</h4>

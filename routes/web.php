@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ClientsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,17 +18,20 @@ $controller_path = 'App\Http\Controllers';
 
 // Main Page Route
 
-// pages
-
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-$controller_path = 'App\Http\Controllers';
+    $controller_path = 'App\Http\Controllers';
 
     Route::get('/', $controller_path . '\pages\HomePage@index')->name('pages-home');
-    Route::get('/page-2', $controller_path . '\pages\Page2@index')->name('pages-page-2');
+    Route::get('/clients', $controller_path . '\Api\ClientsController@index')->name('pages-clients');
+    Route::post('/admin/clients/store', $controller_path . '\Api\ClientsController@store')->name('admin.clients.store');
+    Route::put('/admin/clients/update/{id}', $controller_path . '\Api\ClientsController@update')->name('admin.clients.update');
+    // Route::put('/admin/clients/update/{id}', '\Api\ClientsController@update')->name('admin.clients.update');
+
+    Route::delete('/admin/clients/destroy/{id}', $controller_path . '\Api\ClientsController@destroy')->name('admin.clients.destroy');
+    
 
 });

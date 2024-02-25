@@ -18,7 +18,5 @@ class Client extends Model
       'social_reason',
       'all_cups',
       'url',
-
-
   ];
 }

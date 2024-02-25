@@ -15,17 +15,7 @@ $customizerHidden = 'customizer-hide';
 @section('content')
 <div class="authentication-wrapper authentication-cover">
   <div class="authentication-inner row m-0">
-    <!-- /Left Text -->
-    <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center">
-      <div class="flex-row text-center mx-auto">
-        {{-- <img src="{{asset('assets/img/pages/login-'.$configData['style'].'.png')}}" alt="Auth Cover Bg color" width="520" class="img-fluid authentication-cover-img" data-app-light-img="pages/login-light.png" data-app-dark-img="pages/login-dark.png"> --}}
-        <div class="mx-auto">
-          <h3>Discover the powerful admin template 🥳</h3>
-          <p>
-            Perfectly suited for all level of developers which helps you to <br> kick start your next big projects & Applications.
-          </p>
-        </div>
-      </div>
+
     </div>
     <!-- /Left Text -->
 
@@ -84,6 +74,7 @@ $customizerHidden = 'customizer-hide';
               </label>
             </div>
           </div>
+        
           <button class="btn btn-primary d-grid w-100 bg-black hover:bg-white" type="submit">Iniciar Sesion</button>
         </form>
         

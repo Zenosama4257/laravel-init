@@ -7,9 +7,15 @@
       "slug": "pages-home"
     },
     {
-      "url": "/page-2",
-      "icon": "menu-icon tf-icons bx bx-file",
-      "name": "Page 2",
+      "url": "/clients",
+      "icon": "nav-icon fas fa-users bx-home-circle",
+      "name": "Clientes",
+      "slug": "pages-page-2"
+    },
+    {
+      "url": "/services",
+      "icon": "bi bi-amd",
+      "name": "Servicios",
       "slug": "pages-page-2"
     },
     {

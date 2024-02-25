@@ -1,10 +1,10 @@
 <?php
   // Variables
   return [
-    "creatorName" => "EL RINCON DE ISMA",
-    "creatorUrl" => "https://me.elrincondeisma.com/",
-    "templateName" => "ERDI",
-    "templateSuffix" => "Bootstrap Admin Template",
+    "creatorName" => "Zataca",
+    "creatorUrl" => "https://zataca.es/",
+    "templateName" => "Zataca",
+    "templateSuffix" => "Administracion",
     "templateVersion" => "1.0.0",
     "templateFree" => true,
     "templateDescription" => "Start your development with a Dashboard for Bootstrap 5",
