@@ -20,4 +20,8 @@ class Client extends Model
       'rate',
       'url',
     ];
+
+    public function cups(){
+      return $this->hasMany(Cup::class);
+    }
 }

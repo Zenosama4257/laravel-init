@@ -16,4 +16,8 @@ class Unitprice extends Model
         'month',
         'price',
     ];
+
+    public function servicecups(){
+        return $this->hasMany(Servicecup::class);
+    }
 }

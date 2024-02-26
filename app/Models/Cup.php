@@ -19,4 +19,8 @@ class Cup extends Model
     public function client(){
         return $this->belongsTo(Client::class)->withDefault();
     }
+
+    public function servicecups(){
+        return $this->hasMany(Servicecup::class);
+    }
 }

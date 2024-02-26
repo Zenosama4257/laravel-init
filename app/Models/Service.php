@@ -19,5 +19,9 @@ class Service extends Model
     "deadline_discount"
   ];
 
+  public function servicecups(){
+    return $this->hasMany(Servicecup::class);
+  }
+
 
 }
