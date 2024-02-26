@@ -20,7 +20,9 @@ class DatabaseSeeder extends Seeder
             ClientsSeeder::class,
             UnitpricesSeeder::class,
             CupsSeeder::class,
+            ServicesSeeder::class,
             ServicecupsSeeder::class,
+            FactheadsSeeder::class,
         ]);
         
     }

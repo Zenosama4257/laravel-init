@@ -20,8 +20,8 @@ class ServicecupsSeeder extends Seeder
             [
                 'cost'=>100,
                 'cup_id'=>1,
-                'service_id'=>1,
                 'unitprice_id'=>1,
+                'service_id'=>1,
             ]
         ];
 
