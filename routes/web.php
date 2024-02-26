@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\CupsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UnitpricesController;
 use App\Http\Controllers\UsersController;
@@ -58,3 +59,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/delete/client_id' , [CupsController::class,'delete'])->name('delete_cup');

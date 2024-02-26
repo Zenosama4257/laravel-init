@@ -90,4 +90,8 @@ class CupsController extends Controller
        $cup->delete();
        return back();
     }
+
+    // public function delete(){
+        
+    // }
 }

@@ -87,4 +87,6 @@ class ClientsController extends Controller
         $client->delete();
         return back();
     }
+
+    
 }
